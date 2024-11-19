@@ -1,0 +1,35 @@
+@media screen and (max-width: 360px ){
+    h2 {font-size: 1.6rem;}
+}
+
+@media screen and (min-width: 361px ){
+    /* that is actually the default when using bootstrap*/
+    h2 {font-size: 2rem;}
+    img {
+        width: 300px;
+        height: auto;
+    }
+}
+.float{
+    margin-top: 22px;
+}
+.icon {
+    color: #322D4B;
+}
+
+.hidden {
+    display: none;
+}
+.allWhite{
+	color: rgb(255, 255, 255);
+}
+.allBlack{
+    color: rgb(0, 0, 0);
+}
+#calc{
+	font-family: SF Pro Text,SF Pro Icons,AOS Icons,Helvetica Neue,Helvetica,Arial,sans-serif;
+	background-color: #0070c9;
+	background: linear-gradient(#42a1ec,#0070c9);
+    width: 100%;
+    height: calc(1.5em + .75rem + 2px);
+}

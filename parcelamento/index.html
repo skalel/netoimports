@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Neto Imports — Simulador de Parcelamento</title>
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <!-- Site CSS -->
+  <link rel="stylesheet" href="../css/styles.css">
+  <!-- Font awesome -->
+  <script src="https://kit.fontawesome.com/272d0cd062.js" crossorigin="anonymous"></script>
+
+  <!-- JS bootstrap -->
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>  
+  <script src="../js/lib/jquery.inputmask.min.js"></script>
+  <script src="../js/simulador.js" defer></script>
+  <script src="../js/white_mode.js" defer></script>
+</head>
+
+<body id="bodycolor" style="background-color: rgb(0, 0, 0);">
+  
+  <!-- Float button -->
+
+<a href="#" style="margin-top: 5px;margin-right: 5px;float: right!important; width:30px!important;height:30px!important;color:#FFF!important;border-radius:10px!important;text-align:center!important;"><i class="float" onclick="setWhiteMode()"><img id="imgWhiteMode" style="width: 30px" src="../img/light_mode.png"></i></a>
+
+  <!-- Company Logo -->
+  
+  <div class="container">
+    <div class="py-4 text-center">
+      <a href="https://www.netoimports.com.br"><img src="../img/logo_white.png" alt="Neto Imports" width="300" height="auto" id="mainlogo"></a>
+      <h2 class="pt-4" id="titleColor" style="color: rgb(255, 255, 255);">Faça aqui uma simulação do seu parcelamento</h2>
+    </div>
+
+    <!-- Financing form -->
+
+    <div class=" mx-auto" >
+      <form class="form-row mb-3 align-items-end" action="javascript:void(0);">
+
+        <div class="col-sm-6 form-group">
+          <label for="val_compra" id="valCompra" class="allWhite">Valor da compra</label>
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text">R$</span>
+            </div>
+            <input class="form-control" type="text" name="" placeholder="Digite um valor..." id="val_compra">
+          </div>
+        </div>
+        <div class="col-sm-4 form-group">
+          <label for="val_entrada" id="valEntrada" class="allWhite">Entrada em dinheiro</label>
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text">R$</span>
+            </div>
+            <input class="form-control" type="text" name="" placeholder="Digite um valor..." id="val_entrada">
+          </div>
+        </div>
+        <div class="col-sm-2 form-group">
+          <button class="form-control btn btn-secondary" id="calc">Calcule</button>
+        </div>
+      </form>
+
+      <div id="resultTable" class="hidden">
+          <table class="table">
+              <thead>
+                <tr id="tableHead" class="allWhite">
+                  <th>Parcelas</th>
+                  <th>Valor Parcela</th>
+                  <th>Valor Total*</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr id="fin_deb" class="allWhite">
+                  <td>Débito</td>
+                  <td id="parcelVal">R$ 0,00</td>
+                  <td id="totalVal">R$ 0,00</td>
+                </tr>
+                <tr id="fin_1x" class="allWhite">
+                  <td>1x</td>
+                  <td class="parcel">R$ 0,00</td>
+                  <td class="total">R$ 0,00</td>
+                </tr>
+                <tr id="fin_2x" class="allWhite">
+                  <td>2x</td>
+                  <td class="parcel">R$ 0,00</td>
+                  <td class="total">R$ 0,00</td>
+                </tr>
+                <tr id="fin_3x" class="allWhite">
+                  <td>3x</td>
+                  <td class="parcel">R$ 0,00</td>
+                  <td class="total">R$ 0,00</td>
+                </tr>
+                <tr id="fin_4x" class="allWhite">
+                  <td>4x</td>
+                  <td class="parcel">R$ 0,00</td>
+                  <td class="total">R$ 0,00</td>
+                </tr>
+                <tr id="fin_5x" class="allWhite">
+                  <td>5x</td>
+                  <td class="parcel">R$ 0,00</td>
+                  <td class="total">R$ 0,00</td>
+                </tr>
+                <tr id="fin_6x" class="allWhite">
+                  <td>6x</td>
+                  <td class="parcel">R$ 0,00</td>
+                  <td class="total">R$ 0,00</td>
+                </tr>
+                <tr id="fin_7x" class="allWhite">
+                  <td>7x</td>
+                  <td class="parcel">R$ 0,00</td>
+                  <td class="total">R$ 0,00</td>
+                </tr>
+                <tr id="fin_8x" class="allWhite">
+                  <td>8x</td>
+                  <td class="parcel">R$ 0,00</td>
+                  <td class="total">R$ 0,00</td>
+                </tr>
+                <tr id="fin_9x" class="allWhite">
+                  <td>9x</td>
+                  <td class="parcel">R$ 0,00</td>
+                  <td class="total">R$ 0,00</td>
+                </tr>
+                <tr id="fin_10x" class="allWhite">
+                  <td>10x</td>
+                  <td class="parcel">R$ 0,00</td>
+                  <td class="total">R$ 0,00</td>
+                </tr>
+                <tr id="fin_11x" class="allWhite">
+                  <td>11x</td>
+                  <td class="parcel">R$ 0,00</td>
+                  <td class="total">R$ 0,00</td>
+                </tr>
+                <tr id="fin_12x" class="allWhite">
+                  <td>12x</td>
+                  <td class="parcel">R$ 0,00</td>
+                  <td class="total">R$ 0,00</td>
+                </tr>
+              </tbody>
+            </table>
+            <i><h6 style="color: grey">* O valor total é composto do valor de entrada + o valor restante parcelado.</h6></i>
+      </div>
+
+    </div>
+
+  </div>
+
+</body>
+<footer>
+  <!--
+    Desenvolvido por Sandro Santos (@skalel_)
+    Design Gráfico por Victor Costa (@victorcst23)
+  -->
+</footer>
+</html>

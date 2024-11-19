@@ -1,0 +1,8 @@
+##### LOCAWEB - NAO REMOVER #####
+AddHandler php73-script .php
+suPHP_ConfigPath /home/netoimports1/
+##### LOCAWEB - NAO REMOVER #####
+
+RewriteEngine On
+RewriteCond %{SERVER_PORT} 80
+RewriteRule ^(.*)$ https://www.netoimports.com.br/$1 [R,L]
